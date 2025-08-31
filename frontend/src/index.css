@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap');
+
+.font-jost {
+  font-family: "Jost", sans-serif;
+}
+
+
+.font-ibarra {
+  font-family: "Ibarra Real Nova", Times, serif;
+}
+
 
 @import "tailwindcss";
 
@@ -18,7 +30,7 @@
 html,
 body {
     width: 100%;
-    background-color: black;
+    background-color: white;
     color: white;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -53,11 +65,18 @@ body {
 }
 
 @utility masked-img {
-    mask-image: url("/images/mask-img.png");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 50%;
+  -webkit-mask-image: url("/images/mask-img.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: 50%;
+
+  mask-image: url("/images/mask-img.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 50%;
 }
+
+
 
 @layer components {
     main {
@@ -85,7 +104,7 @@ body {
     }
 
     .noisy {
-        @apply absolute inset-0 size-full bg-[url("/images/noise.png")];
+        
     }
 
     #hero {
@@ -95,16 +114,8 @@ body {
             @apply md:mt-32 mt-40 text-8xl md:text-[20vw] leading-none text-center font-modern-negra;
         }
 
-        .left-leaf {
-            @apply absolute left-0 md:top-20 xl:top-36 2xl:top-52 md:bottom-auto -bottom-20 md:w-fit w-1/3;
-        }
-
-        .right-leaf {
-            @apply absolute right-0 md:bottom-0 xl:top-0 2xl:top-12 top-1/2 md:w-fit w-24;
-        }
-
         .body {
-            @apply container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5;
+           
 
             .content {
                 @apply flex lg:flex-row flex-col w-full gap-10 justify-between items-center lg:items-end mx-auto;
@@ -133,7 +144,10 @@ body {
     }
 
     video {
-        @apply w-full md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
+       video {
+  @apply fixed top-0 left-0 w-full h-full object-cover z-[-1];
+}
+
     }
 
     #cocktails {
@@ -251,7 +265,7 @@ body {
             @apply flex md:flex-row flex-col justify-between md:mb-16 md:mt-0 mt-40 gap-10;
         }
 
-        .cocktail-img {
+        .tea-img {
             @apply md:w-[60vw] w-full h-[50vh] md:h-[70vh] rounded-4xl overflow-hidden absolute top-0 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
         }
 
